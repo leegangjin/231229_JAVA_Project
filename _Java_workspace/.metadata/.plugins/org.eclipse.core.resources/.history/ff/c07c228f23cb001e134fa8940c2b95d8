@@ -1,0 +1,57 @@
+package ddddddddd;
+
+
+public class card2 {
+
+
+  private int num; //카드 번호
+  private char shape; //카드 모양
+  
+  
+  public card2() {
+	  this.num=num;
+	  this.shape=shape;
+  }
+  
+ 
+  
+  
+public int getNum() {
+	return num;
+}
+public void setNum(int num) {
+	this.num = num;
+}
+public char getShape() {
+	return shape;
+}
+
+public void setShape(char shape) {
+	switch(shape) {
+	case '♥' :case '◆': case '♣' : case '♠':
+		this.shape=shape;
+		break;
+		default :
+			this.shape = '♥';
+	}
+ }
+public void print() {
+	 System.out.print(shape);
+	 switch(num) {
+	 case 11:
+		 System.out.print("J ");
+		 break;
+	 case 12:
+		 System.out.print("Q ");
+		 break;
+	 case 13:
+		 System.out.print("K ");
+		 break;
+		 default :
+			 System.out.print(num+" ");
+	
+	 }
+}
+
+
+}

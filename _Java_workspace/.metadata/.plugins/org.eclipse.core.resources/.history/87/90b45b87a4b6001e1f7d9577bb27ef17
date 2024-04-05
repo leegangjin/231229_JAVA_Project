@@ -1,0 +1,62 @@
+package day12;
+
+public class Class05 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stu
+
+	
+		EzenStudent es =new EzenStudent();
+		es.setName("이칸진");
+		es.setNumber("112");
+		es.setAbc("이젠11");
+		es.printEzen();
+		
+	
+		
+	}
+
+}
+
+
+
+class EzenStudent{
+	//학생 정보를 생성하는 클래스
+	
+	private String name;
+	private String number;
+	private String abc;
+	
+	public void printEzen() {
+		this.name =name;
+		this.number =number;
+		this.abc =abc;
+	}
+	public void name() {
+		System.out.println("학생이름 :"+name);
+	}
+	public void number() {
+		System.out.println("핸드폰번호 :"+number);
+	}
+	public String getName() {
+		return name;
+	}
+	public String getNumber() {
+		return number;
+	}
+	public String getAbc() {
+		return abc;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setNumber(String number) {
+		this.number = number;
+	}
+	public void setAbc(String abc) {
+		this.abc = abc;
+	}
+	public void abc() {
+		System.out.println("수강과목 :"+abc);
+	}
+}

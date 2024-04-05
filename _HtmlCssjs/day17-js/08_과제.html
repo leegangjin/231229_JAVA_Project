@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+        #wapper{
+            background-color: darkcyan;
+            width: 500px;
+            height: 100px;
+            margin:  0 auto;
+            text-align: center;
+        }
+        #itemList{
+            background-color: aqua;
+           
+        }
+        #li{
+            text-align: center;
+        }
+        #del{
+            display: flex;
+            justify-content: right;
+        }
+        #item{
+            text-align: left;
+        }
+
+       
+    </style>
+</head>
+
+<body>
+    <div id="wapper">
+        <h2>여행 준비물 점검 목록</h2>
+        <form action="">
+            <input type="text" id="item" autofocus="true">
+            <button type="button" id="add">추가</button>
+        </form>
+        <div>
+            <ul id="itemList"></ul>
+        </div>
+    </div>
+
+    <script>
+        // let itemList=[];
+
+        document.getElementById('clcik',(e)=>{
+            console.log(e.target.classList)
+            if(e.target.classList.contains('list')){
+                console.log('111');
+            }
+        })
+
+        const item = document.getElementById('item');
+        const add = document.getElementById('add');
+        const itemList = document.getElementById('itemList');
+        let count =1;
+        add.addEventListener('click',()=>{
+            let str ="";
+            if(item.value==''){
+                alert('입력해주십시오.');
+            }
+           str = item.value;
+           itemList.innerHTML += `<li id="li">${str} </li>  <button type="button" id="del">X</button>`;
+
+        })
+      
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+package ddddddddd;
+
+public class 변수합 {
+
+	public static void main(String[] args) {
+
+		int[][] input = {{10,20,50},{20,30,15},{100,110,120}}; //  3*3 의 2차원 배열 선언
+		int[][] output = new int[input.length+1][input[0].length+1]; // 1을 더해서 4*4 배열로만듦
+		               
+		for(int i=0;i<input.length;i++){
+		for(int j=0;j<input[0].length;j++){
+		output[i][j] = input[i][j]; // input 값을  output 값에 대입
+		output[i][output[0].length-1] += output[i][j];
+		output[output.length-1][j] += output[i][j]; // output  값의 행을 하나씩 줄여가면서  input
+
+		//값에 더함
+		output[output.length-1][output[0].length-1] += output[i][j];
+		}
+		}
+		for(int i=0;i<output.length;i++){
+		for(int j=0;i<output.length;j++){
+		System.out.print(output[i][j]+" ");  //출력
+		}
+		System.out.println(); //한칸 띔
+		}
+
+		}
+
+		}

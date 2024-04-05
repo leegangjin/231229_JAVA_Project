@@ -1,0 +1,10 @@
+package ddddddddd;
+
+public class cmain {
+
+	public static void main(String[] args) {
+		card2  o = new card2();
+		
+	}
+
+}

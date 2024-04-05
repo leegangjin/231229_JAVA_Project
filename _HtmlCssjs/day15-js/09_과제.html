@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        1~45까지 중복되지 않게 숫자 6개를 랜덤으로 추출 => 출력
+        set 객체를 사용하여 생성
+    </h1>
+    <button type="button" id="makebt">랜덤자리 6자리 생성(출력)</button>
+    <h1 id="makelotto"></h1>
+    <button type="button" id="bonusbt">당첨번호 7자리(마지막번호는 보너스번호)생성(출력)</button>
+    <h1 id="bonuslotto"></h1>
+    <button type="button" id="resultbt">결과확인</button>
+    <h3 id="result"></h3>
+    <button type="button" onclick="reset()">reset</button>
+    
+
+    <script>
+        const makebt = document.getElementById('makebt');
+        const bonusbt = document.getElementById('bonusbt');
+        const resultbt = document.getElementById('resultbt');
+       
+
+        const lotto = new Set();
+        const mylotto  = new Set();
+        let count =0; //맞춘 개수
+
+        function make() {  //로또 번호 생성 메서드 랜덤수
+
+            return Math.floor(Math.random() * 45) + 1;
+        }
+
+        function bonusmake() {  //로또 번호 생성 메서드 랜덤수
+
+            return Math.floor(Math.random() * 45) + 1;
+        }
+
+
+        document.getElementById('makebt').addEventListener('click', () => {
+
+
+            while (lotto.size < 6) {
+                lotto.add(make());
+                console.log(lotto);
+            }
+            let str = "";
+            lotto.forEach(function (v) {
+                str += `${v}   `;
+
+                document.getElementById('makelotto').innerHTML =
+                    `${str}`
+
+            })
+
+
+        })
+        document.getElementById('bonusbt').addEventListener('click', () => {
+
+            while (mylotto.size < 7) {
+                mylotto.add(bonusmake());
+                console.log(mylotto);
+            }
+            let str2 = "";
+
+            mylotto.forEach(function (v) {
+                str2 += `${v}   `;
+                
+
+                document.getElementById('bonuslotto').innerHTML =
+                    `${str2} `
+
+            })
+
+
+
+        })
+
+        document.getElementById('resultbt').addEventListener('click', () => {
+            let check = "";
+            lotto.forEach(function(v){
+                mylotto.forEach(function(vc){
+                    if(v==vc){
+                        count++;
+                    }
+
+                })
+            })
+            // includes() : 하나의 문자열이 다른 문자열에 있는지 확인
+           // true/ false 리턴
+            if(count==6){
+                check= `1등 당첨!! 당첨금 : 20억`;
+            }else if(count==5){
+                check = `2등당첨!!  당첨금 : 6천만원`;
+            }
+            else if(count==4){
+                check = `3등당첨!! 당첨금 : 150만원`;
+            }
+            else if(count==3){
+                check = `4등당첨!! 당첨금 : 5만원`;
+            }
+            else if(count==2){
+                check = `5등당첨!! 당첨금 : 5천원`;
+            }else{
+                check =`꽝~ 돈낭비~!`
+            }
+
+            document.getElementById('result').innerHTML = 
+            `맞춘개수 : ${count}  당첨 유무 : ${check}`;
+
+
+           
+
+
+        })
+
+        function reset(){
+
+            document.getElementById('makelotto').innerHTML=null;
+            document.getElementById('bonuslotto').innerHTML=null;
+            document.getElementById('result').innerHTML=null;
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

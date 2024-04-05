@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        class user 생성
+        생성자로 name, birth를 받아서 멤버변수로 저장
+        get age() 나이를 리턴
+        method status() => 성인인지 미성년자인지 찍기(콘솔에 출력)
+        
+        
+        */
+
+        let today = new Date("2009-01-01");
+        console.log(today.toLocaleDateString());
+
+        
+        let year = today.getFullYear;
+
+        class User{
+            constructor(name, birth){
+                this.name = name;
+                this.birth = birth;
+            }
+
+            // get userAge(){
+            //     let b = Number(this.birth.slice(0,2));
+            //     // console.log(b);
+            //     let birthYear = Number(this.birth.slice(2,2));
+            //     let age = (b === 19)? year-(1900+birthYear) : year-(2000+birthYear);
+            //     if (this.age >=20){
+            //         console.log("성인입니다.");
+            //     }else{
+            //         console.log("미성년자입니다.");
+            //     }
+            //     return `이름 : ${this.name} 생년월일 : ${this.birth} 나이 : ${this.age} `;
+            // }
+
+            get age(){
+                let birthday = new Date(this.birth);
+                let todayYear = new Date().getFullYear;
+                return todayYear - birthday.getFullYear();
+
+            }
+            
+            status(){
+                if(this.age <20){
+                    console.log("미성년자입니다.")
+                }else{
+                    console.log("성인입니다."); 
+                }
+            }
+    }
+    let user1 = new User("noa","1999-11-22");
+    console.log(user1);
+
+    let hong = new User('hong','85-01-01');
+    console.log(hong.age);
+    console.log(hong.status());
+    
+
+    </script>
+</body>
+</html>

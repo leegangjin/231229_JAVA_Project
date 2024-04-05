@@ -1,0 +1,23 @@
+package ddddddddd;
+
+public class 변수합 {
+
+	public static void main(String[] args) {
+		
+		int[][] arr = {{10,20,50},{20,30,15},{100,110,120}};
+		int sum=0;
+		int cnt=0;
+		
+		for(int i =0; i< arr.length; i++) {//0~4 5개 5개 행 반복
+			for(int j=0; j<arr.length; j++) { //첫행의 length
+				arr[i][j] = cnt;
+				cnt++;
+				System.out.print(arr[i][j]+" ");
+			}
+				
+		} 
+		
+
+	}
+
+}

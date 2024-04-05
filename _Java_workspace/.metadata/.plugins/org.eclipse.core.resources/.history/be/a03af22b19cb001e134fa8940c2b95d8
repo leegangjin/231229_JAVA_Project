@@ -1,0 +1,16 @@
+package ddddddddd;
+
+public class 변수합 {
+
+	public static void main(String[] args) {
+		
+		int[] [] a = {{10,20,50},{20,30,15},{100,110,120}};
+		
+	    for(int i=0; i <= a.length; i++) {
+		
+	    }
+		
+
+	}
+
+}

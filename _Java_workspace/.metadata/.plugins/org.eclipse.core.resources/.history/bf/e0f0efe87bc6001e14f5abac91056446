@@ -1,0 +1,59 @@
+package Bar;
+
+import java.util.Scanner;
+
+public class BarManager {
+	//예약 객체 
+
+	public void signUp(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void logIn(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void addMoney(Scanner scan) {
+		AddMoney m = new AddMoney();
+		m.addmoney();
+		
+		
+		
+	}
+
+	public void myPage(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void reservation(Scanner scan) {
+		ReservationManager R =new ReservationManager();
+		R.reservation(scan);
+	}
+
+	public void delRes(Scanner scan) {
+		ReservationManager R =new ReservationManager();
+		R.cancelreservation(scan);
+		
+	}
+
+	public void printMenu() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void orderPick(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void printReceipt() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	
+}

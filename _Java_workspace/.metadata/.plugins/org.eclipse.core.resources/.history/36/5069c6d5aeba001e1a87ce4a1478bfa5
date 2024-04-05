@@ -1,0 +1,72 @@
+package stdManager;
+
+import java.util.Scanner;
+
+
+public class StudentManager implements Program{
+	private Student[] studentList = new Student[5];
+	private int stdCnt;
+	
+	
+	@Override
+	public void insertStudent(Scanner scan) { //학생등록
+		//1명의 학생정보를 입력받아서 객체를 생성한 후 studentList에 추가
+		System.out.println("학번>");
+		String num =scan.next();
+		System.out.println("이름>");
+		String name = scan.next();
+		System.out.println("전화번호>");
+		String phone= scan.next();
+		
+		//입력받은 값을 객체로 생성 (Student)
+		Student s =new Student(num,name,phone);
+		
+		//배열이 다 찼을 경우 배열복사
+		if(stdCnt==studentList.length) {
+			Student[] tmp =new Student[studentList.length+5];
+			System.arraycopy(studentList, 0, tmp, 0, stdCnt);
+			studentList=tmp;
+		}
+		studentList[stdCnt]=s;
+         stdCnt++;
+	}
+
+	@Override
+	public void searchStudent(Scanner scan) {//학생검색
+		
+	}
+
+	@Override
+	public void registerSubject(Scanner scan) {//수강신청
+		
+	}
+
+	@Override
+	public void deleteSubject(Scanner scan) { //수강삭제
+		
+	}
+
+	@Override
+	public void prinStudent() {
+		System.out.println("----전체 학생 정보-");
+		for(int i=0; i <stdCnt; i++) {
+			studentList[i].stdPrint(); //학생정보 출력
+		}
+		
+	}
+
+	@Override
+	public void printStudent() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+
+	
+
+
+
+
+
+}

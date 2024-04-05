@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>오늘은?</h1>
+    <button type="button" onclick="datebtn()">today</button>
+    <h3 id="result"></h3>
+    <!-- 오늘 날짜와 요일 출력 -->
+    <!-- 2024. 03 . 19 (화) -->
+    <script>
+        function datebtn(){
+        let date = new Date();
+        let today =date.toLocaleDateString(); //2024. 3. 18
+        let day = date.getDay();
+        console.log(day);
+        let print = "";
+        
+        switch(day){
+            case 0 :  print = "일"; break;
+            case 1 :  print = "월"; break;
+            case 2 :  print = "화"; break;
+            case 3 :  print = "수"; break;
+            case 4 :  print = "목"; break;
+            case 5 :  print = "금"; break;
+            case 6 :  print = "토"; break;
+            
+            default : print = "에러"; break;
+        }
+        alert(today+"("+print+")");
+
+        document.getElementById('result').innerHTML =   `${today} (${print})`;
+
+
+
+        }
+    </script>
+</body>
+</html>

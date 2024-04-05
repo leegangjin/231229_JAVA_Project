@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+    이름 : <input type="text" id="name"><br>
+    주민번호 : <input type="text" id="rNum" placeholder="ex)xxxxxx-xxxxxxx"><br>
+    <button type="button" onclick="print()"> 확인</button><br>
+</form>
+<h3 id="h3"></h3>
+<script>
+    function print(){
+        let h3 = document.getElementById('h3');
+        let name = document.getElementById('name').value; //이름
+        let rNum = document.getElementById('rNum').value; //주민번호
+
+        let today = new Date();
+        let nowyear = today.getFullYear();
+
+        let birth = rNum.slice(0,rNum.indexOf("-"));
+        let jendernum = rNum.charAt(rNum.indexOf("-")+1);
+        let jender =((jendernum=="1" || jendernum=="3")? "남" : "여");
+        
+        let juminyear =null;
+       //나이
+       //오늘날짜의 연도 -태어난 연도
+       //2024 - (2000+01)  / 2024 - (1900+99)
+        let  birthyear =birth.slice(0,2);
+        if(rNum.charAt(rNum.indexOf('-')+1)==1||rNum.charAt(rNum.indexOf('-')+1)==2){
+            juminyear ='19'+ birthyear;
+        }else{
+            juminyear='20' +birthyear;
+        };
+        console.log(juminyear);
+        let age = Number(nowyear)-Number(juminyear);
+        
+
+       
+
+         h3.innerHTML = `<li>이름 : ${name}</li>`;
+         h3.innerHTML += `<li>생년월일 : ${birth}</li>`;
+         h3.innerHTML += `<li>나이 : ${age}</li>`;
+         h3.innerHTML += `<li>성별 : ${jender}</li>`;
+
+    }
+
+</script>
+
+
+</body>
+</html>

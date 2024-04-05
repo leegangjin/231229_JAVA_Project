@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>컴퓨터가 숫자 0~9까지 중복되지않는 정수 3개를 랜덤으로 출제 맞추는 게임</h1>
+    <ul>
+        <li>세자리의 숫자는 중복되면 안됨.(각 숫자는 자리수를 갖고있음)</li>
+        <li>각 자리수와 입력한 숫자가 일치하먄 1strike(스트라이크)</li>
+        <li>숫자만 포함되어 있으면 1Ball(볼)</li>
+        <li>숫자가 전혀 없으면 out(아웃)</li>
+        <li>3스트라이크면 게임 종료</li>
+    </ul>
+    <button type="button" id="gamestart">게임시작</button>
+    <h1 id="print"></h1>
+    숫자 입력 : <input type="text" id="input">     <button type="button" id="check">게임 확인</button>
+    <ul id="result"></ul>
+    <script>
+        
+        const ranarr =[];
+        const myarr=[];
+        const input = document.getElementById('input');
+        const print = document.getElementById('print');
+        const check = document.getElementById('check');
+        const result = document.getElementById('result');
+        const gamestart = document.getElementById('gamestart');
+        let str ="";
+        let count =0;
+        
+        let ballcount=0;
+
+        gamestart.addEventListener('click',()=>{
+            while(ranarr.length < 3){
+                let random = Math.floor(Math.random()*9)+0;
+                ranarr.push(random);
+               
+            }
+            console.log(ranarr);
+            console.log(ranarr[0]);
+            console.log(ranarr[1]);
+            console.log(ranarr[2]);
+
+            
+
+            document.getElementById('print').innerText =
+            `컴퓨터가 숫자를 생성 했습니다.`;
+
+
+        })
+
+        check.addEventListener('click',()=>{
+            let str1 ="";
+            let inputval = input.value;
+           
+            let first = Number(inputval.substr(0,1));
+            let second = Number(inputval.substr(1,1));
+            let third = Number(inputval.substr(2,1));
+            console.log(first);
+            console.log(second);
+            console.log(third);
+            myarr.push(first);
+            myarr.push(second);
+            myarr.push(third);
+            console.log(myarr);
+
+
+            ranarr.includes()
+
+            if(first==ranarr[0]){
+                count++;
+            }
+            if(second==ranarr[1]){
+                count++;
+            }
+            if(third==ranarr[2]){
+                count++;
+            }
+
+          str+=  document.getElementById('result').innerText =
+                `${first},${second},${third} => ${count}Strike ${ballcount}Ball`;
+
+
+            if( count==2 || count==1){
+                document.getElementById('result').innerText =
+                str;
+
+            }
+            if( count==0){
+                document.getElementById('result').innerText =
+                str;
+
+            }
+            if(count==3){
+                document.getElementById('result').innerText =
+                `성공`;
+
+            }
+
+           
+            
+
+            
+
+        
+            
+
+
+
+                
+            
+
+
+
+        })
+
+
+
+
+
+
+
+
+    </script>
+</body>
+    </html>

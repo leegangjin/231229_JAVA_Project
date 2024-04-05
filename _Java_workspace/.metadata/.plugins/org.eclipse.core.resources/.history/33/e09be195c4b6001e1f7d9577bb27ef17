@@ -1,0 +1,125 @@
+package day12;
+
+public class 과제 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Student subjectarr[] =new Student[5];
+	 String subjectarr[] ={"java","html","파이썬","c언어","자바스크립트"};
+		Student st = new Student("EZEN","(인천)","철수"," 010-1123-2345 "," 000101 ","25","java") ;
+		System.out.println(st);
+		System.out.println();
+		System.out.println("-----------------");
+		Student st2 = new Student("EZEN","(서울)","영희"," 010-1423-2645 "," 980301 ","27","백엔드") ;
+		System.out.println(st2);
+		System.out.println();
+		System.out.println("-----------------");
+		Student st3 = new Student("EZEN","(인천)","노아"," 010-1423-2665 "," 990301 ","26","백엔드,프론트엔드") ;
+		System.out.println(st3);
+			
+
+	}
+
+}
+
+ /* -학생 정보를 관리하기 위한 클래스
+  * -학생 기본정보 : 이름 , 생년월일 , 전화번호 , 나이
+  * -학원 정보 : 학원명 ="EZEN"(final static),지점
+  * -수강 정보 : 수강과목 , 기간
+  * => 여러과목을 들을 수 있음(여러과목 수강하기 위해서는 배열로 처리 5과목 까지 가능)
+  * 
+  * ex)홍길동 000101 010-1111-1111 25살
+  *           EZEN(인천)
+  *           자바 6개월,파이썬 1개월 , 빅데이터 3개월
+  *           
+  *  기능(메서드)
+  *  -학생기본정보를 출력하는 기능
+  *  -학원정보를 출력하는 기능
+  *  -수강정보를 출력하는 기능
+  *  -학생의 수강정보를 추가하는 기능        
+ */ 
+
+
+
+
+
+
+class Student{
+	private String name;
+	private String birth;
+	private String num;
+	private String  age;
+	private String  group;
+	private String gigum;
+	private final static String  HAK ="EZEN";
+	
+	public Student(String HAK,String gigum,String name, String num, String birth, String age, String group ) {
+		
+		this.name=name;
+		this.num=num;
+		this.age=age;
+		this.group=group;
+		this.birth=birth;
+		this.gigum=gigum;
+	}
+
+	public String getGigum() {
+		return gigum;
+	}
+
+	public void setGigum(String gigum) {
+		this.gigum = gigum;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getBirth() {
+		return birth;
+	}
+
+	public String getNum() {
+		return num;
+	}
+
+	public String getAge() {
+		return age;
+	}
+
+	public String getGroup() {
+		return group;
+	}
+
+	public String getHAK() {
+		return HAK;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setBirth(String birth) {
+		this.birth = birth;
+	}
+
+	public void setNum(String num) {
+		this.num = num;
+	}
+
+	public void setAge(String age) {
+		this.age = age;
+	}
+
+	public void setGroup(String group) {
+		this.group = group;
+	}
+
+	
+	public String toString() {
+		return HAK +gigum+">"+"("+name +num+birth+")"+group;
+		
+	}
+	
+	
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            가격 : <input type="text" id="price">원<br>
+            할인율 : <input type="text" id="sale">%<br>
+            <button type="button" onclick="salepr()">할인가격 계산</button>
+        </fieldset>
+    </form>
+    <ol id="ol" style="font-weight: bold;"></ol>
+    <script>
+        const ol = document.getElementById('ol');
+        function salepr() {
+            let price =document.getElementById('price').value;
+            let sale =document.getElementById('sale').value;
+         
+
+            let saleprice = Number(price)*(Number(sale)/100);
+            let pay = Number(price) -saleprice;
+
+            ol.innerHTML =` 가격 : ${price}.  `
+             +`  할인율 : ${sale}%,  `
+             +`할인금액 : ${saleprice},  ` 
+            +`  지불금액 :${pay}`;
+            
+        }
+    </script>
+</body>
+</html>

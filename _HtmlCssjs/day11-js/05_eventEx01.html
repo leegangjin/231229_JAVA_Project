@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        성적확인
+        이름:홍길동 input
+        국어 :80  input
+        영어 : 90 input
+        수학:80  input
+        성적계산 버튼
+        -----------------------
+        이름: 홍길동
+        국어: 80
+        영어:90
+        수학:80
+        합계 oo
+        평균 : oo표시
+
+    
+     -->
+     <h1>성적을 입력하세요.</h1>
+     <form action="">
+        <fieldset>
+            <h3><legend>성적확인</legend></h3>
+            이름 : <input type="text" id="name"><br>
+            국어 : <input type="text" id="kor"><br>
+            수학 : <input type="text" id="math"><br>
+            영어 : <input type="text" id="eng"><br>
+            
+            <button type="button" onclick="print()">성적계산</button>
+           
+        </fieldset>
+        
+     </form>
+     <ol id="ol" class="ol"></ol>
+     <script>
+        
+        const ol = document.getElementById('ol');
+        function print (){
+            let name = document.getElementById('name').value;
+            let kor = document.getElementById('kor').value;
+            let math = document.getElementById('math').value;
+            let eng = document.getElementById('eng').value;
+
+
+            let korval =parseInt(kor);
+            let mathval =parseInt(math);
+            let engval =parseInt(eng);
+            let sum= korval + mathval + engval;
+            let avg = Math.round(sum/3); //정수로 반올림 math.round
+          
+            //.tofixed(2) : 소수점 자리 표현
+           
+           
+            ol.innerHTML =`<li> 이름 : ${name}</li> `
+             +`<li> 국어 : ${kor}</li> `
+             +`<li>수학 : ${math}</li> ` 
+            +`<li> 영어 :${eng}</li>`
+            ol.innerHTML +=`<li>합계 : ${sum}</li>` 
+            + `<li> 평균 : ${avg}</li>`;
+        }
+     </script>
+</body>
+</html>

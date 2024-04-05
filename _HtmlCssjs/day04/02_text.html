@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        text 속성
+        text-align : 정렬 left, right , center , justify(양쪽)
+        text-indent : 들여쓰기
+        text-decoration : 줄 긋기
+            -none : 없음
+            -underline : 밑줄
+            -overline : 윗줄
+            -line-through : 가운데 줄
+        letter-spacing : 글자간 간격
+        word-spacing :단어간 간격
+        line-height : 글자 기준선 높이
+        text_shadow : 글자 그림자
+           -좌측px , 상단px 번짐정도px 색상
+           -중첩효과(멀티가능), (콤마)로 계속 이어나갈수 있음.
+        white-space : 콘텐츠 감싸기 방법
+           - wrap : 여러줄을 그대로 두기
+           - nowrap : 한줄로 처리
+        text-overflow : 텍스트가 범위를 넘어가는 경우 처리
+           -elipsis : 넘어가는 범위의 단어를(...)처리
+        overflow : 요소가 넘어가면 어떻게 처리할지 결정
+           -hidden : 숨김
+           -scroll : 스크롤 생성
+           -auto : 스크롤 오토 생성
+
+
+
+    -->
+    <!-- 
+        css : 표준단위
+        px : 픽셀
+        cm/mm/in => lin => 96px
+        % : 퍼센트 현재 값을 기준으로 %
+        em : 배수 , 부모값을 기준으로 배수
+        rem : 배수, 문서의 값을 기준으로 배수
+        pt : 포인터 1pt => 1/72in
+        pc : 피카소 1pc => 12pt
+        deg : 각도
+    -->
+    <style>
+        p{
+            text-indent: 20px;
+            /* 앞라인 20픽셀 만큼 띄어쓰기 */
+            text-align: justify; 
+            /* 양쪽 정렬 */
+
+        }
+        .line{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        div{
+            width: 300px;
+            height: 50px;
+            border: 1px solid black;
+            text-align: center;
+            word-spacing: 20px;
+            letter-spacing: 5px;
+            text-shadow: 5px 5px 5px rgb(24, 24, 41);
+            background-color: beige;
+            line-height: 50px;
+            text-decoration: blue;
+            
+            
+
+        }
+    </style>
+</head>
+<body>
+    <div>Hello Hello Hi Hi</div>
+    <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+    <P class="line">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere nisi et mi ornare congue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut ultricies, felis ac finibus pharetra, lorem massa malesuada odio, a rhoncus sapien tortor eget augue. Praesent tellus ex, condimentum et dolor quis, vulputate aliquam neque. Aenean interdum erat non mi lacinia vestibulum. Integer posuere semper nisi, ut hendrerit neque vestibulum vitae. Quisque nec maximus lorem. Etiam vitae lacinia dolor, sed efficitur quam. Nulla dapibus nibh id nunc sagittis, id rutrum turpis tempus. Sed a placerat odio. Praesent tempus orci metus, quis tristique ligula elementum vitae. Morbi venenatis fringilla lorem, in sollicitudin risus accumsan eget. Proin ut faucibus mauris, sit amet consectetur ex. Phasellus vel faucibus purus, ac consectetur lectus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </P>
+</body>
+</html>

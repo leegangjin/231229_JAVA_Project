@@ -1,0 +1,62 @@
+package day13;
+
+import java.util.Scanner;
+
+/* product 클래스 생성 : 상품을 등록하는 클래스
+ * 상품명 , 가격 멤버변수
+ * 상품 추가 메서드
+ * 상품 출력 메서드(toString 생성가능)
+ */
+class Product {
+	//멤버변수 선언
+	private String[] item=new String[10];
+	private int price[]=new int[10];
+	private int up=0;
+	
+	public String toString() {
+		return  "상품명 :"+item+"("+price+")";
+	}
+	 public void uping(String item,int price) { //상품 추가 메서드
+		 int up=0;
+	    	if(up < 10) {
+	    		this.item[up]=item;
+	    		this.price[up]=price;
+	    	up++;
+	    	}else {
+	    		System.out.println("추가 등록불가");
+	    	}
+	    }
+	  public void printitem() {
+		  for(int i =0; up < 10; i++) {
+			  System.out.println("상품명 :"+item[i]+"("+price[i]+")");
+		  }
+	  }
+
+}	
+
+
+
+public class 과제 {
+
+	public static void main(String[] args) {
+		//상품을 10개 등록가능한 배열 생성
+		//스케너를 이용하여 상품을 등록받기
+		//등록한 상품 출력
+		
+		Scanner scan =new Scanner(System.in);
+		Product pr =new Product();
+		System.out.println("상품을 등록해주세요.");
+		//for(int i=0;i < )
+		//scan.next();
+		
+		pr.printitem();
+		pr.uping("고구마", 2000);
+		
+		
+		
+		scan.close();
+		
+
+	}
+
+}

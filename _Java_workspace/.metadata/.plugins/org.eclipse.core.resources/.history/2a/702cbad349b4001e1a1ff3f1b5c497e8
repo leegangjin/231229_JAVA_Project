@@ -1,0 +1,122 @@
+package day10;
+
+import java.util.Scanner;
+
+import day_08.Method07;
+
+public class BaseBallGame {
+
+	public static void main(String[] args) {
+		/* 야구게임을 메서드화
+		 * 사용자번호는 직접입력
+		 * 번호는 랜덤 생성(1~9, 중복 x)
+		 * 중복 안되게 하는 메서드 isContain 호출하여 사용
+		 * 
+		 */
+		Scanner scan =new Scanner(System.in);
+		int comNum[ ] =new int[3];
+		int myNum[ ] =new int[3];
+		
+		
+		System.out.println(">야구게임>");
+		
+		
+		int cnt =0;
+		while(cnt < comNum.length) {
+		int a = (int)(Math.random()*9)+1;
+		if(!Method07.isContain(comNum, a)) {
+			comNum[cnt]=a;
+			cnt++;
+		}
+	}
+		
+		while(true) { //중복값 제거
+			int strike =0;
+			int ball =0;
+		System.out.println("사용자 번호입력");
+		
+			for(int i=0; i <myNum.length; i++) {
+				myNum[i] =scan.nextInt();
+				for(int j=0; j < i; j++) {
+					if(myNum[i]==myNum[j]) {
+						i--;
+						break;
+					}
+				
+				}
+			}
+			strikecnt(comNum, myNum);
+			ballcnt(comNum, myNum);
+		
+	   
+	   if(strike==3) {
+		   System.out.println(strike +"s"+"정답");
+		   break;
+	   }else if(strike==0&&ball==0) {
+		   System.out.println("out");
+	   }else {
+		   System.out.println(strike+"s"+ball+"b");
+	   }	
+		strike =0;
+		ball =0;
+		
+	   
+		}
+		scan.close();
+		
+		
+		
+		
+		
+		
+		
+		
+
+ }
+		
+    //랜덤으로 배열을 중복되지 않게 생성
+	//Method07의 isContain 가져와서 사용
+	public static boolean isContain(int arr[],int random) {
+		for(int i =0; i < arr.length; i++) {
+			if(arr[i]==random) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	
+	//strike 개수를 카운트 하는 메서드
+	/* comNum , myNum를 주고 번호와 위치가 일치하면 count 하는 메서드
+	 * 리턴 타입 : int count 리턴
+	 * 
+	 */
+	public static int strikecnt(int comNum[],int myNum[]){
+		int strike =0;
+		for(int i =0; i < comNum.length; i++) {
+			for(int j =0; j < myNum.length; j++) {
+				if(comNum[i]==myNum[j]&&i==j) {
+					strike++;
+				}
+			}
+		}
+		return strike;
+	}
+	
+	/*볼 개수를 카운트하는 메서드
+	 * comNum,myNum를 주고 번호만 일치하면 count 하는 메서드
+	 * 리턴 타입 : int count 리턴
+	 * 
+	 */
+	public static int ballcnt(int comNum[],int myNum[]){
+		int ball =0;
+		for(int i =0; i < comNum.length; i++) {
+			for(int j =0; j < myNum.length; j++) {
+				if(comNum[i]==myNum[j]&&i!=j) {
+					ball++;
+				}
+			}
+		}
+		return ball;
+	}
+}

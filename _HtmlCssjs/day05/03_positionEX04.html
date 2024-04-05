@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .menu-box{
+        width: 300px;
+        height: 50px;
+        border: 1px solid black;
+        position: absolute;
+        position: sticky;
+    }
+    .menu{
+        border: 1px solid black;
+        width: 300px;
+        height: 50px;
+        box-sizing: border-box;
+        display: block;
+        text-align: center;
+        line-height: 50px;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 500;
+        color: black;
+        
+        
+
+    } 
+    
+    .img{
+        width: calc(100% - 210px);
+        position: relative;
+        margin-left: 20%;
+        position: sticky;
+
+    }
+    /* .img-box{
+        width: calc(100%-210px);
+        height: 700px;
+        background-repeat: no-repeat;
+        background-color: aliceblue;
+        float: right;
+        background-image: url(../image/풍경.jpg);
+        
+    } */
+    .menu:last-child{
+        border-bottom: 1px solid black;
+    }
+    
+
+</style>
+<body>
+    <div class="menu-box">
+        <a href="../day05/menu1.html" class="menu s">menu1</a>
+        <a href="../day05/menu2.html" class="menu ">menu2</a>
+        <a href="../day05/menu3.html" class="menu ">menu3</a>
+        <a href="../day05/menu4.html" class="menu ">menu4</a>
+    </div>
+    <div>
+        <a href="" class="image"></a>
+        <img src="../image/풍경.jpg" alt="" class="img">
+    </div>
+</body>
+</html>

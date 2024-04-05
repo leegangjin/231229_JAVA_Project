@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+   <!-- font link -->
+   <!-- 해당하는 css font-family 삽입 -->
+    <style>
+        /* @font-face {
+            font-family: jua;
+            src: url(../font/-.25zm);
+        } */
+        @keyframes bemin{
+            0%{margin-right: 600px;}
+            50%{margin-right: 800px;}
+            100%{margin-right: 900px;}
+
+        }
+        .box{
+            width: 200px;
+            height: 200px;          
+            box-sizing: border-box;
+            margin: 10px auto;
+            animation-name: bemin;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            
+            
+        }
+        
+        .body{
+            background-color: rgb(42, 193, 188);
+            height: 100%;
+            width: 100%;
+        }
+        
+       .h{
+        margin: 10px auto;
+        width: 200px;
+        height: 200px;
+        font-family: "Nanum Pen Script", cursive;
+        font-size: 25px;
+       }
+        
+        .menu{
+            margin: 10px auto;
+            width: 400px;
+            height: 500px;
+            margin:50px auto;
+            
+            text-decoration: none;
+            text-align: center;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 20px;
+            background-color: white;
+            font-family: "Nanum Pen Script", cursive;
+            font-size: 20px;
+            
+
+        }
+        .co{
+            width: 400px;
+            height: 300px;
+            border-radius: 20px 20px 0px 0px;
+        }
+        .chiken{
+            width: 400px;
+            height: 300px;
+            border-radius: 20px 20px 0px 0px;
+        }
+        .pig , .pizza , .coffee{
+            width: 400px;
+            height: 300px;
+            border-radius: 20px 20px 0px 0px;
+
+        }
+        
+        .box>img{
+            width: 150px;
+            height: 150px;
+            
+        }
+        .hh{
+            font-size: 55px;
+            font-family: "Nanum Pen Script", cursive;
+
+        }
+        .credit{
+            border: 1px solid black;
+            background-color: rgb(42, 193, 188);
+            width: 80px;
+            height: 30px;
+            margin: 10px auto;
+            border-radius: 10px;
+        }
+        
+    </style>
+</head>
+<body class="body">
+    <!-- 가로 300px -->
+    <div class="box">
+        <img src="https://www.baemin.com/_next/static/media/img-section-1-labtop.9fc01bea.png" alt="">
+    </div>
+    <header >
+        <div class="h">
+            
+        <h1  class="hh">배달의 민족</h1>
+        <h3 >넌 배달 해 , 난 먹을게</h3>
+    </div>
+    </header>
+    <!-- 여기서부터 메뉴 -->
+    <div class="menu">
+        <div class="image"><img class="co"  src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEyMTdfMTQ4%2FMDAxNzAyODAwNDA0MDUy.Y7eQDOIgAdjZO2byx6pBta0SpBgsYzV4-44eARi9Excg.CLo-R3LD5m8CBAGVCLg_82KoT-HhHsL82C3YEkwtK2Mg.JPEG.gkfn908%2Foutput_2672368765.jpg&type=sc960_832" alt=""></div>
+        <div>
+            <h3>맛있는 초밥</h3>
+            <!-- 초밥설명 -->
+            <p>주머니가 가벼운 당신의 마음까지 생각한 착한 가격</p>
+            <p><del>25,000원</del>15,000원</p>
+            <p><div class="credit">바로 결제</div></p>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="image">
+            <img  class="chiken" src="../image/치킨.jpg" alt=""> </div>
+        <div>
+            <h3>바삭한 치킨</h3>
+            <!-- 치킨 설명 -->
+            <p>서민을  생각한 착한 가격</p>
+            <p><del>30,000원</del>25,000원</p>
+            <p><div class="credit">바로 결제</div></p>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="image">
+            <img  class="pizza" src="../image/피자.jpg" alt=""> </div>
+        <div>
+            <h3> 치즈폭탄 피자</h3>
+            <!-- 치킨 설명 -->
+            <p>치즈 듬뿍!!  치즈 폭발!! 쫄깃한 피자 </p>
+            <p><del>35,000원</del>30,000원</p>
+            <p><div class="credit">바로 결제</div></p>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="image">
+            <img  class="pig" src="../image/족발.jpg" alt=""> </div>
+        <div>
+            <h3>쫄깃한 족발</h3>
+            <!-- 족발 설명 -->
+            <p>손을 펴보세요 ! 족발이 땡깁니다.!</p>
+            <p><del>30,000원</del>25,000원</p>
+            <p><div class="credit">바로 결제</div></p>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="image">
+            <img  class="coffee" src="../image/커피.jpg" alt=""> </div>
+        <div>
+            <h3>얼어죽어도 아아</h3>
+            <!-- 커피 설명 -->
+            <p>후식으론 커피!</p>
+            <p><del>2000원</del>1900원</p>
+            <p><div class="credit">바로 결제</div></p>
+        </div>
+    </div>
+</body>
+</html>

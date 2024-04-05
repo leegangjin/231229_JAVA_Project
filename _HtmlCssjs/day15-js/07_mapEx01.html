@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+        input 2개 생성 => 과목 , 점수
+        map에 추가
+        출력 => map을 출력 ul => li 형태로 출력 html :89
+        결과 => 합계 , 평균 , 합격여부(60이상이면 합격) => h3 태그
+
+     -->
+     과목 : <input type="text" id="sub" ><br>
+     점수 : <input type="number" id="score"><br>
+     
+     <button type="button" id="addbt" ">추가</button>
+     <button type="button" id="printbt" >출력</button>
+     <button type="button" id="resultbt" >결과</button>
+     <ul id="print"></ul>
+     
+     <h3 id="result"></h3>
+
+     <script>
+       
+       
+        let sum=0;
+        let avg =0;
+        const datamap = new Map();
+        let sub ="";
+        let score=0;
+      
+
+        function add(){
+           sub= document.getElementById('sub').value;
+           score=  document.getElementById('score').value;
+            datamap.set(sub,score);
+            sum+=Number(score);
+            const avg = (Number(sum) / datamap.size);
+            let pass =(avg >=60)? "합격" : "불합격";
+            
+        }
+
+
+        document.getElementById('addbt').addEventListener('click', ()=>{
+            add();
+            document.getElementById('print').innerHTML =`점수 추가완료`;
+            document.getElementById('sub').value=null;
+            document.getElementById('score').value=null;
+
+
+
+        })
+        document.getElementById('printbt').addEventListener('click', ()=>{
+            let str =" ";
+            datamap.forEach(function( k , v){
+            str += `<li>${v} : ${k} </li>`;
+            
+        })
+        document.getElementById('print').innerHTML =
+
+        `${str}`;
+            
+    })
+
+   
+            
+    
+       document.getElementById('resultbt').addEventListener('click', ()=>{
+
+        document.getElementById('print').innerHTML =
+        `합계 : ${sum} 평균: ${avg} `;
+
+
+
+      })
+            
+            
+          
+
+
+       
+
+
+
+
+     </script>
+</body>
+</html>

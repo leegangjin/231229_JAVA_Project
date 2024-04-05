@@ -1,0 +1,22 @@
+package ddddddddd;
+
+import java.util.Scanner;
+
+public class 난수 {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		int a= (int)(Math.random()*99)+1;
+		System.out.println("난수의 개수를 입력하세요. : " );
+		int cnt = scan.nextInt();
+		for(int i=0; i< cnt; i++) {
+			System.out.println(a);
+		}
+		
+		
+		
+        scan.close();
+	}
+
+}

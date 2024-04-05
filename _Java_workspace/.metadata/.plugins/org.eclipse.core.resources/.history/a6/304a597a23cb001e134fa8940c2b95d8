@@ -1,0 +1,36 @@
+package ddddddddd;
+
+import day11.Card;
+
+public class CardPack2 {
+	int arr[] = new int[52] ;
+	private Card[] pack =new Card[52];
+	private int cnt=0;
+	
+	
+	
+	public CardPack2() {
+		char shape = '♥';
+		for(int i =1; i <=4; i++) { //4가지 모양을 넣기위한 for문
+			
+			switch(i) {
+			case 1: shape ='♥'; break;
+			case 2: shape ='◆'; break;
+			case 3: shape ='♣'; break;
+			case 4: shape ='♠'; break;
+			}
+			for(int j=1; j <=13; j++) { //13까지 숫자를 넣기위한 for문
+				Card c =new Card(); //새카드 1장을 생성
+				c.setShape(shape);
+				c.setNum(j);
+				pack[cnt] =c;
+				cnt++;
+			}
+		}
+		
+		
+	}
+	
+	
+	
+}

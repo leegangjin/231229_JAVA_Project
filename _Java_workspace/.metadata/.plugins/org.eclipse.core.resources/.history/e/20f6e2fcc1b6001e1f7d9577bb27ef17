@@ -1,0 +1,103 @@
+package day12;
+
+public class 과제 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+ /* -학생 정보를 관리하기 위한 클래스
+  * -학생 기본정보 : 이름 , 생년월일 , 전화번호 , 나이
+  * -학원 정보 : 학원명 ="EZEN"(final static),지점
+  * -수강 정보 : 수강과목 , 기간
+  * => 여러과목을 들을 수 있음(여러과목 수강하기 위해서는 배열로 처리 5과목 까지 가능)
+  * 
+  * ex)홍길동 000101 010-1111-1111 25살
+  *           EZEN(인천)
+  *           자바 6개월,파이썬 1개월 , 빅데이터 3개월
+  *           
+  *  기능(메서드)
+  *  -학생기본정보를 출력하는 기능
+  *  -학원정보를 출력하는 기능
+  *  -수강정보를 출력하는 기능
+  *  -학생의 수강정보를 추가하는 기능        
+ */ 
+
+
+
+
+
+class Student{
+	private String name;
+	private String birth;
+	private String num;
+	private String  age;
+	private String  group;
+	private final static String  GIGUM ="EZEN(인천)";
+	
+	public Student(String name, String birth, String num, String age, String group, String gigum ) {
+		
+		this.name=name;
+		this.num=num;
+		this.age=age;
+		this.group=group;
+		this.birth=birth;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getBirth() {
+		return birth;
+	}
+
+	public String getNum() {
+		return num;
+	}
+
+	public String getAge() {
+		return age;
+	}
+
+	public String getGroup() {
+		return group;
+	}
+
+	public String getGigum() {
+		return gigum;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setBirth(String birth) {
+		this.birth = birth;
+	}
+
+	public void setNum(String num) {
+		this.num = num;
+	}
+
+	public void setAge(String age) {
+		this.age = age;
+	}
+
+	public void setGroup(String group) {
+		this.group = group;
+	}
+
+	public void setGigum(String gigum) {
+		this.gigum = gigum;
+	}
+	public String toString() {
+		return gigum +">"+"("+name +num+birth+")"+group;
+		
+	}
+	
+	
+}

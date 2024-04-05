@@ -1,0 +1,102 @@
+package day12;
+
+public class Class05 {
+
+	public static void main(String[] args) {
+		/* 객체를 생성시 값을 초기화 하는 방법
+		 * -기본값, aud시적 초기값, 초기화 블럭 , 생성자
+		 * 1.기본값 : 기본적으로 지정되는 값 int => 0 ,String => null
+		 * 2.명시적 초기값 : 멤버변수를 선언함과 동시에 값을 지정하는 방법
+		 *       private String name ="홍길동"
+		 * 3.초기화 블럭 : {   } 멤버변수를 초기화
+		 * 4.생성자 : 객체를 생성할 떄 초기화 해서 생성
+		 * 
+		 * 초기값의 우선순위
+		 * 기본값 -> 명시적 초기값 -> 초기화 블럭 -> 생성자
+		 */
+
+	
+		EzenStudent es =new EzenStudent(); //기본생성자
+		this.name =name;
+		this.number=number;
+		this.abc=abc;
+		this.gigum=gigum;
+		//toString ()메서드가 없으면 객체의 주소가 출력
+		//toString() 메서드가 있으면 toString()가 출력
+		
+		es.printEzen();
+		
+	    EzenStudent ez1 = new EzenStudent("강남","영이","java","222");
+		System.out.println(ez1);
+		
+		EzenStudent e22 =new EzenStudent();
+		System.out.println(e22);
+		
+		EzenStudent ez3 = new EzenStudent();
+		System.out.println(ez3);
+		
+		EzenStudent e24 =new EzenStudent();
+		System.out.println(e24);
+		
+		EzenStudent e25 =new EzenStudent();
+		System.out.println(e25);
+		
+		
+	
+		
+	}
+	//tostring 
+
+}
+   
+
+
+class EzenStudent{
+	//학생 정보를 생성하는 클래스
+	private String gigum ="inCheon"; //명시적 초기값
+	private String name; //기본 초기값 null
+	private String number;
+	private String abc;
+	
+	public EzenStudent() {
+		
+	}
+	
+		
+	
+	public void printEzen() {
+		System.out.println("학생이름 :"+name); 
+		System.out.println("핸드폰번호 :"+number);
+		System.out.println("수강과목 :"+ abc);
+	}
+	public String toString() {
+		return gigum +">"+name +"("+ abc+ "/"+number+")";
+	}
+	public void name() {
+		System.out.println("학생이름 :"+name);
+	}
+	public void number() {
+		System.out.println("핸드폰번호 :"+number);
+	}
+	public String getName() {
+		return name;
+	}
+	public String getNumber() {
+		return number;
+	}
+	public String getAbc() {
+		return abc;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setNumber(String number) {
+		this.number = number;
+	}
+	public void setAbc(String abc) {
+		this.abc = abc;
+	}
+	public void abc() {
+		System.out.println("수강과목 :"+abc);
+	}
+}

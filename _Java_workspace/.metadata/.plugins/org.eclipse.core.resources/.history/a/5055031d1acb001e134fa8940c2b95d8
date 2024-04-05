@@ -1,0 +1,10 @@
+package ddddddddd;
+
+
+public class card2 {
+
+
+    private int num;
+  private char shape;
+	
+}

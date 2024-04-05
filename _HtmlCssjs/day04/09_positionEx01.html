@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        상하좌우 값이 있을경우
+        margin : 10px => 상하좌우 전체 여백
+        magin : 10px 20px => 상하 좌우
+        magin : 10px 20px 30px => 상 좌우 하
+        magin : 10px 20px 30px 40px => 상 우 하 좌(시계방향)
+    -->
+    <style>
+        div>div{
+           width: 100px; 
+           height: 100px;
+           float: left;
+           border: 1px solid none;
+           background-color: brown; 
+           text-align: center;
+           color: white;
+           margin-left:  10px;
+           font-weight: 900;
+           text-shadow: 5px 5px 5px red;
+           letter-spacing: 5px;
+           padding: 5px;
+           margin-left: 5px;
+           text-decoration: aqua;
+           bottom: 30px;
+           font-size: 20px;
+           
+           
+
+        }
+        div::after{
+            content: "";
+            display: block;
+            clear: both;
+
+        }
+        div>div:hover{
+            position: relative;
+            top: 10px;
+            left: 10px;
+            transform: translate(10px,10px);
+
+    
+        }
+        .T{
+            background-color: blue;
+        }
+        .H{
+            background-color: darkcyan;
+        }
+        .A{
+            background-color: blanchedalmond;
+        }
+        .N{
+            background-color: darkgoldenrod;
+        }
+        .k{
+            background-color: fuchsia;
+        }
+        .S{
+            background-color: khaki;
+        }
+        
+
+            
+        
+        
+        
+
+    </style>
+</head>
+<body>
+    <div>
+        <div class="T">T</div>
+        <div class="H">H</div>
+        <div class="A">A</div>
+        <div class="N">N</div>
+        <div class="K">K</div>
+        <div class="S">S</div>
+    </div>
+</body>
+</html>

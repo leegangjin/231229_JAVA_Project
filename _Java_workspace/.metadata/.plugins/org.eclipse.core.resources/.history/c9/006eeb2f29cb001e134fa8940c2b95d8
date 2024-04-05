@@ -1,0 +1,57 @@
+package ddddddddd;
+
+public class card2 {
+	
+       private int num;
+     private char shape;
+     
+     public int getNum() {
+		return num;
+	}
+
+	public char getShape() {
+		return shape;
+	}
+
+	public void setNum(int num) {
+		if(num < 2||num > 13) {
+			this.num=1;
+		}else {
+			this.num =num;
+		}
+	}
+	public void setShape(char shape) {
+		switch(shape) {
+		case '♥' :case '◆': case '♣' : case '♠':
+			this.shape=shape;
+			break;
+			default :
+				this.shape = '♥';
+		}
+			
+		
+	}
+
+	//생성자
+     public card2() {
+    	 this.num='A';
+    	 this.shape='♥';
+     }
+     public void print() {
+    	 System.out.print(shape);
+    	 switch(num) {
+    	 case 11:
+    		 System.out.print("J ");
+    		 break;
+    	 case 12:
+    		 System.out.print("Q ");
+    		 break;
+    	 case 13:
+    		 System.out.print("K ");
+    		 break;
+    		 default :
+    			 System.out.print(num+" ");
+    	
+    	 }
+     }
+}
